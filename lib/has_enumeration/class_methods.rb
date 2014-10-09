@@ -69,6 +69,7 @@ module HasEnumeration
     end
 
     def create_enumeration_mapping_class(mapping)
+      mapping = mapping.with_indifferent_access
       inverted_mapping = mapping.invert
       Class.new do
         attr_reader :raw_value
